@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>TypeScript Socket.IO Course</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <style>
+        .chatPanel {
+            border: solid 1px gray;
+            border-radius: 20px 0px 4px 4px;
+            box-shadow: 15px 10px #dddddd;
+            background: rgb(34, 193, 195);
+            background: linear-gradient(56deg, rgba(34, 193, 195, 0.49193275943189773) 0%, rgba(253, 187, 45, 0.494733879880077) 100%);
+            position: relative;
+        }
+
+        .chatMessageInputDiv {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+        }
+
+        .messages {
+            padding-left: 0;
+            overflow: hidden;
+            height: 340px;
+            margin-bottom: 40px;
+        }
+
+        .messages li {
+            list-style-type: none;
+            margin-bottom: 30px;
+            padding: 6px 6px 6px 6px;
+            display: block
+        }
+
+        .otherMessage {
+            background: #ffcda3;
+            border: solid 1px gray;
+            margin: 0px 5px 5px 0px;
+            float: right;
+            padding: 0px 6px 0px 6px;
+            border-radius: 10px 10px 0 10px;
+        }
+
+        .myMessage {
+            background: #1bffbb;
+            border: solid 1px gray;
+            margin: 0px 5px 5px 5px;
+            float: left;
+            padding: 0px 6px 0px 6px;
+            border-radius: 10px 10px 10px 0;
+        }
+
+        .jumbotron {
+            margin-top: -40px;
+            height: 180px;
+        }
+
+        .footer {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+   
+
+   
+
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+          
+            <div class="col-sm-4">
+                <div class="chatPanel">
+                    <ol id="messages" class="messages">
+                    </ol>
+                    <div class="chatMessageInputDiv">
+                        <div class="input-group">
+                            <input class="form-control width100" id="messageText" placeholder="Enter Chat Message"
+                                onkeyup="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" onclick="client.sendMessage()">Send</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+
+</body>
+
+</html>
